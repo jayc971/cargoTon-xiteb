@@ -14,15 +14,15 @@ export default function Footer() {
               <h3 className="text-2xl font-bold mb-2 text-black">Stay Updated</h3>
               <p className="text-gray-800">Subscribe to our newsletter for the latest insights and updates.</p>
             </div>
-            <div className="flex w-full md:w-auto space-x-2">
+            <div className="flex flex-col w-full md:flex-row md:w-auto md:space-x-2 space-y-2 md:space-y-0">
               <Input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-white text-gray-900 border-0 min-w-[300px]"
+              type="email"
+              placeholder="Enter your email"
+              className="bg-white text-gray-900 border-0 min-w-[300px]"
               />
-              <Button className="bg-black hover:bg-gray-800 text-white">
-                Subscribe
-                <ArrowRight className="h-4 w-4 ml-2" />
+              <Button className="bg-black hover:bg-gray-800 text-white w-full md:w-auto">
+              Subscribe
+              <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </div>
           </div>

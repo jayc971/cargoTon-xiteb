@@ -101,68 +101,72 @@ export default function Header() {
     <>
       <header className="w-full bg-white shadow-sm">
         <nav className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
+            <div className="flex justify-between items-center py-4 lg:justify-between justify-end">
+            <div className="flex items-center lg:justify-start justify-end w-full">
               <Link href="/" className="flex items-center space-x-2">
-                <Package className="h-8 w-8 text-common-bg-color" />
-                <span className="text-2xl font-bold text-gray-900">
-                  Cargo<span className="text-common-bg-color">TON</span>
-                </span>
+              <Package className="h-8 w-8 text-common-bg-color" />
+              <span className="text-2xl font-bold text-gray-900">
+                Cargo<span className="text-common-bg-color">TON</span>
+              </span>
               </Link>
             </div>
 
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
-                <div key={item.name} className="relative">
-                  {item.subItems.length > 0 ? (
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <button
-                          onClick={() => handleNavClick(item)}
-                          className="text-gray-700 hover:text-common-bg-color transition-colors font-medium flex items-center group"
-                        >
-                          {activeItem === item.name && (
-                            <span className="w-2 h-2 bg-common-bg-color rounded-full mr-2"></span>
-                          )}
-                          {item.name}
-                          <ChevronDown className="h-4 w-4 ml-1 group-hover:text-common-bg-color" />
-                        </button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="start" className="w-48">
-                        {item.subItems.map((subItem) => (
-                          <DropdownMenuItem
-                            key={subItem.name}
-                            onClick={handleSubItemClick}
-                            className="cursor-pointer hover:bg-yellow-50 hover:text-common-bg-color"
-                          >
-                            {subItem.name}
-                          </DropdownMenuItem>
-                        ))}
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  ) : (
-                    <button
-                      onClick={() => handleNavClick(item)}
-                      className="text-gray-700 hover:text-common-bg-color transition-colors font-medium flex items-center"
+              <div key={item.name} className="relative">
+                {item.subItems.length > 0 ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                  <button
+                    onClick={() => handleNavClick(item)}
+                    className="text-gray-700 hover:text-common-bg-color transition-colors font-medium flex items-center group"
+                  >
+                    {activeItem === item.name && (
+                    <span className="w-2 h-2 bg-common-bg-color rounded-full mr-2"></span>
+                    )}
+                    {item.name}
+                    <ChevronDown className="h-4 w-4 ml-1 group-hover:text-common-bg-color" />
+                  </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="w-48">
+                  {item.subItems.map((subItem) => (
+                    <DropdownMenuItem
+                    key={subItem.name}
+                    onClick={handleSubItemClick}
+                    className="cursor-pointer hover:bg-yellow-50 hover:text-common-bg-color"
                     >
-                      {activeItem === item.name && (
-                        <span className="w-2 h-2 bg-common-bg-color rounded-full mr-2"></span>
-                      )}
-                      {item.name}
-                    </button>
+                    {subItem.name}
+                    </DropdownMenuItem>
+                  ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                ) : (
+                <button
+                  onClick={() => handleNavClick(item)}
+                  className="text-gray-700 hover:text-common-bg-color transition-colors font-medium flex items-center"
+                >
+                  {activeItem === item.name && (
+                  <span className="w-2 h-2 bg-common-bg-color rounded-full mr-2"></span>
                   )}
-                </div>
+                  {item.name}
+                </button>
+                )}
+              </div>
               ))}
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex space-x-4 w-full ">
+              <div className="flex flex-col md:flex-row gap-2 lg:gap-4 ml-auto items-end">
               <Button
                 onClick={handleButtonClick}
                 className="bg-common-bg-color hover:bg-yellow-600 text-black font-semibold px-6"
               >
                 GET A QUOTE
               </Button>
-              <Button onClick={handleButtonClick} className="bg-black hover:bg-gray-800 text-white font-semibold px-6">
+              <Button
+                onClick={handleButtonClick}
+                className="bg-black hover:bg-gray-800 text-white font-semibold px-6"
+              >
                 SIGN IN
               </Button>
               <Button
@@ -173,8 +177,9 @@ export default function Header() {
               >
                 <Menu className="h-4 w-4" />
               </Button>
+              </div>
             </div>
-          </div>
+            </div>
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (

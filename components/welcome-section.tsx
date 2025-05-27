@@ -12,7 +12,7 @@ const WelcomeSection = () => {
                 alt="Logistics Services"
                 className="rounded-lg shadow-md"
               />
-              <div className="absolute bottom-0 right-0 p-4 bg-white rounded-lg shadow-md transform translate-x-1/4 translate-y-1/4">
+              {/*<div className="absolute bottom-0 right-0 p-4 bg-white rounded-lg shadow-md transform translate-x-1/4 translate-y-1/4">
                 <div className="flex items-center space-x-2">
                   <Truck className="h-8 w-8 text-common-bg-color" />
                   <div>
@@ -20,7 +20,7 @@ const WelcomeSection = () => {
                     <p className="text-xs text-gray-500">Connecting businesses globally</p>
                   </div>
                 </div>
-              </div>
+              </div>*/}
             </div>
           </div>
           <div className="mt-12">
